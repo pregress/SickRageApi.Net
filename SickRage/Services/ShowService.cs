@@ -54,5 +54,12 @@ namespace SickRage.Services
 
             return _client.GetResponse<object>(command + showId);
         }
+
+        public Response<object> Update(int showId)
+        {
+            const string command = "?cmd=show.update&indexerid=";
+
+            return _client.GetResponse<object>(command + showId);
+        }
     }
 }

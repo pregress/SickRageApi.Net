@@ -112,8 +112,24 @@ namespace SickRage.Tests.Services
                 var response = Client.ShowService.Refresh(familyGuyId);
 
                 //Assert
-                Assert.IsNotNull(response);
-                Assert.AreEqual("success", response.Result);
+                AssertSuccess(response);
+            }
+        }
+
+        [TestClass]
+        public class Update : ShowSeviceTest
+        {
+            [TestMethod]
+            public void Returns_Success()
+            {
+                //Arrange
+                const int familyGuyId = 75978;
+
+                //Act
+                var response = Client.ShowService.Update(familyGuyId);
+
+                //Assert
+                AssertSuccess(response);
             }
         }
     }

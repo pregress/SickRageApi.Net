@@ -51,8 +51,7 @@ namespace SickRage.Tests.Services
                 var response = Client.EpisodeService.Search(episodeParameter);
 
                 //Assert
-                Assert.IsNotNull(response);
-                Assert.AreEqual("success", response.Result);
+                AssertSuccess(response);
             }
         }
     }
