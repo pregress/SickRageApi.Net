@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
     <Compile Include="Services\ApiServiceTest.cs" />
+    <Compile Include="Services\BaseServiceTest.cs" />
     <Compile Include="Services\EpisodeServiceTest.cs" />
     <Compile Include="Services\ShowSeviceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

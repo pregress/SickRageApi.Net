@@ -18,5 +18,12 @@ namespace SickRage.Services
 
             return _client.Get<Episode>(command, episode.ShowId, episode.Season, episode.Episode);
         }
+
+        public Response<SearchResult> Search(EpisodeParam episode)
+        {
+            const string command = "?cmd=episode.search&indexerid={0}&season={1}&episode={2}";
+
+            return _client.GetResponse<SearchResult>(command, episode.ShowId, episode.Season, episode.Episode);
+        }
     }
 }

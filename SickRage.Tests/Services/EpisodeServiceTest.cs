@@ -4,20 +4,56 @@ using SickRage.Model;
 namespace SickRage.Tests.Services
 {
     [TestClass]
-    public class EpisodeServiceTest
+    public class EpisodeServiceTest : BaseServiceTest
     {
-        [TestMethod]
-        public void GetWorkAholicsS05E01_ReturnsEpisode()
+        [TestClass]
+        public class GetEpisode : EpisodeServiceTest
         {
-            //Arrange
-            var client = new Client(AppSettings.Url, AppSettings.ApiKey);
+            [TestMethod]
+            public void GetWorkAholicsS05E01_ReturnsEpisode()
+            {
+                //Arrange
+                var episodeParameter = new EpisodeParam { ShowId = 211751, Season = 5, Episode = 1 };
 
-            //Act //211751, 5, 1
-            var episode = client.EpisodeService.GetEpisode(new EpisodeParam { ShowId = 211751, Season = 5, Episode = 1 });
+                //Act
+                var episode = Client.EpisodeService.GetEpisode(episodeParameter);
 
-            //Assert
-            Assert.IsNotNull(episode);
-            Assert.IsNotNull(episode.Name);
+                //Assert
+                Assert.IsNotNull(episode);
+                Assert.IsNotNull(episode.Name);
+            }
+        }
+
+        [TestClass]
+        public class Search : EpisodeServiceTest
+        {
+            [TestMethod]
+            public void Returns_Failure()
+            {
+                //Arrange
+                var episodeParameter = new EpisodeParam { ShowId = 75978, Season = 0, Episode = 20 };
+
+                //Act
+                var response = Client.EpisodeService.Search(episodeParameter);
+
+                //Assert
+                Assert.IsNotNull(response);
+                Assert.AreEqual("failure", response.Result);
+            }
+
+            [TestMethod, Ignore] //Ignored triggers a new download
+            public void Returns_Succes()
+            {
+                //Arrange
+                var episodeParameter = new EpisodeParam { ShowId = 263365, Season = 1, Episode = 1 };
+
+                //Act
+                var response = Client.EpisodeService.Search(episodeParameter);
+
+                //Assert
+                Assert.IsNotNull(response);
+                Assert.AreEqual("success", response.Result);
+            }
         }
     }
 }

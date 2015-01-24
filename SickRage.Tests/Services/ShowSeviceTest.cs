@@ -4,15 +4,8 @@ using System.Linq;
 namespace SickRage.Tests.Services
 {
     [TestClass]
-    public class ShowSeviceTest
+    public class ShowSeviceTest : BaseServiceTest
     {
-        protected Client Client { get; private set; }
-
-        public ShowSeviceTest()
-        {
-            Client = new Client(AppSettings.Url, AppSettings.ApiKey);
-        }
-
         [TestClass]
         public class GetShow : ShowSeviceTest
         {
