@@ -1,4 +1,7 @@
-# SickRageApi.Net
+# SickRageApi.Net   
+
+![alt text](https://ci.appveyor.com/api/projects/status/github/prebenh/SickRageApi.Net "Build status")
+
 A library to consume the sickrage api from within a .net application
 
 ## Setup
