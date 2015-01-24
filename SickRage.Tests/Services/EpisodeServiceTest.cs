@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SickRage.Model;
 
 namespace SickRage.Tests.Services
 {
@@ -11,8 +12,8 @@ namespace SickRage.Tests.Services
             //Arrange
             var client = new Client(AppSettings.Url, AppSettings.ApiKey);
 
-            //Act
-            var episode = client.EpisodeService.GetEpisode(211751, 5, 1);
+            //Act //211751, 5, 1
+            var episode = client.EpisodeService.GetEpisode(new EpisodeParam { ShowId = 211751, Season = 5, Episode = 1 });
 
             //Assert
             Assert.IsNotNull(episode);

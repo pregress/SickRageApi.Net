@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="Model\Episode.cs" />
+    <Compile Include="Model\EpisodeParam.cs" />
     <Compile Include="Model\Response.cs" />
     <Compile Include="Model\Show.cs" />
     <Compile Include="Model\ShowStatus.cs" />
