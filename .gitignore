@@ -41,3 +41,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+/SickRage/obj/Debug
+/SickRage/bin/Debug
+/SickRage.Tests/bin/Debug
+/SickRage.Tests/obj/Debug
