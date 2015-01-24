@@ -47,6 +47,8 @@
     <Compile Include="Model\Episode.cs" />
     <Compile Include="Model\EpisodeParam.cs" />
     <Compile Include="Model\Response.cs" />
+    <Compile Include="Model\SeasonEpisode.cs" />
+    <Compile Include="Model\SeasonList.cs" />
     <Compile Include="Model\Show.cs" />
     <Compile Include="Model\ShowStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

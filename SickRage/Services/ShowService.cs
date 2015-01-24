@@ -12,11 +12,18 @@ namespace SickRage.Services
             _client = new HttpClient();
         }
 
-        public Show GetShow(int id)
+        public Show GetShow(int showId)
         {
             const string command = "?cmd=show&tvdbid=";
 
-            return _client.Get<Show>(command + id);
+            return _client.Get<Show>(command + showId);
+        }
+
+        public SeasonList GetSeasons(int showId)
+        {
+            const string command = "?cmd=show.seasons&indexerid=";
+
+            return _client.Get<SeasonList>(command + showId);
         }
     }
 }
