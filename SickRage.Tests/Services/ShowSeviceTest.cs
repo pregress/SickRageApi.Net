@@ -98,5 +98,23 @@ namespace SickRage.Tests.Services
                 image.Dispose();
             }
         }
+
+        [TestClass]
+        public class Refresh : ShowSeviceTest
+        {
+            [TestMethod]
+            public void Returns_Success()
+            {
+                //Arrange
+                const int familyGuyId = 75978;
+
+                //Act
+                var response = Client.ShowService.Refresh(familyGuyId);
+
+                //Assert
+                Assert.IsNotNull(response);
+                Assert.AreEqual("success", response.Result);
+            }
+        }
     }
 }

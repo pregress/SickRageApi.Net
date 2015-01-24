@@ -47,5 +47,12 @@ namespace SickRage.Services
 
             return _client.GetImage(command + showId);
         }
+
+        public Response<object> Refresh(int showId)
+        {
+            const string command = "?cmd=show.refresh&indexerid=";
+
+            return _client.GetResponse<object>(command + showId);
+        }
     }
 }
