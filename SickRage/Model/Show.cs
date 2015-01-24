@@ -7,8 +7,7 @@ namespace SickRage.Model
 {
     public class Show
     {
-        [JsonProperty(PropertyName = "tvdbid")]
-        public int Id { get; set; }
+        public int TvdbId { get; set; }
 
         [JsonProperty(PropertyName = "show_name")]
         public string Name { get; set; }

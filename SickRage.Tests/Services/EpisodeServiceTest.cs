@@ -16,7 +16,7 @@ namespace SickRage.Tests.Services
                 var episodeParameter = new EpisodeParam { ShowId = 211751, Season = 5, Episode = 1 };
 
                 //Act
-                var episode = Client.EpisodeService.GetEpisode(episodeParameter);
+                var episode = Client.Episodes.GetEpisode(episodeParameter);
 
                 //Assert
                 Assert.IsNotNull(episode);
@@ -34,7 +34,7 @@ namespace SickRage.Tests.Services
                 var episodeParameter = new EpisodeParam { ShowId = 75978, Season = 0, Episode = 20 };
 
                 //Act
-                var response = Client.EpisodeService.Search(episodeParameter);
+                var response = Client.Episodes.Search(episodeParameter);
 
                 //Assert
                 Assert.IsNotNull(response);
@@ -48,7 +48,7 @@ namespace SickRage.Tests.Services
                 var episodeParameter = new EpisodeParam { ShowId = 263365, Season = 1, Episode = 1 };
 
                 //Act
-                var response = Client.EpisodeService.Search(episodeParameter);
+                var response = Client.Episodes.Search(episodeParameter);
 
                 //Assert
                 AssertSuccess(response);

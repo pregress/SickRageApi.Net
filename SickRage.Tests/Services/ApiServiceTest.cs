@@ -14,7 +14,7 @@ namespace SickRage.Tests.Services
             var client = new Client(AppSettings.Url, AppSettings.ApiKey);
 
             //Act
-            var version = client.ApiService.GetVersion();
+            var version = client.Api.GetVersion();
 
             //Assert
             Assert.AreEqual(5, version);
@@ -27,7 +27,7 @@ namespace SickRage.Tests.Services
             var client = new Client(AppSettings.Url, AppSettings.ApiKey);
 
             //Act
-            var commands = client.ApiService.GetApiCommands();
+            var commands = client.Api.GetApiCommands();
 
             //Assert
             Assert.IsTrue(commands.Count() > 1);

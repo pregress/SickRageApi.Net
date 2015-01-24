@@ -5,25 +5,28 @@ namespace SickRage
 {
     public class Client
     {
-        public ApiService ApiService { get; private set; }
+        public ApiService Api { get; private set; }
 
-        public ShowService ShowService { get; private set; }
+        public ShowService Show { get; private set; }
 
-        public EpisodeService EpisodeService { get; private set; }
+        public EpisodeService Episodes { get; private set; }
+
+        public ComingEpisodesService ComingEpisodes { get; private set; }
 
         public Client(string url, string apiKey)
-            : this(url, apiKey, new ApiService(), new ShowService(), new EpisodeService())
+            : this(url, apiKey, new ApiService(), new ShowService(), new EpisodeService(), new ComingEpisodesService())
         {
         }
 
-        internal Client(string url, string apiKey, ApiService apiService, ShowService showService, EpisodeService episodeService)
+        internal Client(string url, string apiKey, ApiService apiService, ShowService showService, EpisodeService episodeService, ComingEpisodesService comingEpisodes)
         {
             Settings.Instance.BaseUrl = url;
             Settings.Instance.ApiKey = apiKey;
 
-            ApiService = apiService;
-            ShowService = showService;
-            EpisodeService = episodeService;
+            Api = apiService;
+            Show = showService;
+            Episodes = episodeService;
+            ComingEpisodes = comingEpisodes;
         }
     }
 

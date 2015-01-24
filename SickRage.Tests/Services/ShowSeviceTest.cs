@@ -13,7 +13,7 @@ namespace SickRage.Tests.Services
             public void ReturnsMoreThenOneShow()
             {
                 //Act
-                var shows = Client.ShowService.GetShows();
+                var shows = Client.Show.GetShows();
 
                 //Assert
                 Assert.IsTrue(shows.Count() > 1);
@@ -30,7 +30,7 @@ namespace SickRage.Tests.Services
                 const int gameOfThronesId = 121361;
 
                 //Act
-                var show = Client.ShowService.GetShow(gameOfThronesId);
+                var show = Client.Show.GetShow(gameOfThronesId);
 
                 //Assert
                 Assert.IsNotNull(show);
@@ -48,7 +48,7 @@ namespace SickRage.Tests.Services
                 const int familyGuyId = 75978;
 
                 //Act
-                var seasons = Client.ShowService.GetSeasons(familyGuyId);
+                var seasons = Client.Show.GetSeasons(familyGuyId);
 
                 //Assert
                 Assert.IsNotNull(seasons);
@@ -67,7 +67,7 @@ namespace SickRage.Tests.Services
                 const int familyGuyId = 75978;
 
                 //Act
-                var statistics = Client.ShowService.GetStats(familyGuyId);
+                var statistics = Client.Show.GetStats(familyGuyId);
 
                 //Assert
                 Assert.IsNotNull(statistics);
@@ -85,7 +85,7 @@ namespace SickRage.Tests.Services
                 const int familyGuyId = 75978;
 
                 //Act
-                var image = Client.ShowService.GetBanner(familyGuyId);
+                var image = Client.Show.GetBanner(familyGuyId);
 
                 //Assert
                 Assert.IsNotNull(image);
@@ -104,7 +104,7 @@ namespace SickRage.Tests.Services
                 const int familyGuyId = 75978;
 
                 //Act
-                var image = Client.ShowService.GetPoster(familyGuyId);
+                var image = Client.Show.GetPoster(familyGuyId);
 
                 //Assert
                 Assert.IsNotNull(image);
@@ -123,7 +123,7 @@ namespace SickRage.Tests.Services
                 const int familyGuyId = 75978;
 
                 //Act
-                var response = Client.ShowService.Refresh(familyGuyId);
+                var response = Client.Show.Refresh(familyGuyId);
 
                 //Assert
                 AssertSuccess(response);
@@ -140,7 +140,7 @@ namespace SickRage.Tests.Services
                 const int familyGuyId = 75978;
 
                 //Act
-                var response = Client.ShowService.Update(familyGuyId);
+                var response = Client.Show.Update(familyGuyId);
 
                 //Assert
                 AssertSuccess(response);

@@ -48,6 +48,8 @@
     <Compile Include="Client.cs" />
     <Compile Include="Model\Episode.cs" />
     <Compile Include="Model\EpisodeParam.cs" />
+    <Compile Include="Model\FutureEpisode.cs" />
+    <Compile Include="Model\FutureType.cs" />
     <Compile Include="Model\Response.cs" />
     <Compile Include="Model\SearchResult.cs" />
     <Compile Include="Model\SeasonEpisode.cs" />
@@ -58,8 +60,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\ApiRequest.cs" />
     <Compile Include="Services\ApiService.cs" />
+    <Compile Include="Services\ComingEpisodesService.cs" />
     <Compile Include="Services\EpisodeService.cs" />
-    <Compile Include="Services\HttpClientExtensions.cs" />
+    <Compile Include="HttpClientExtensions.cs" />
     <Compile Include="Services\ShowService.cs" />
   </ItemGroup>
   <ItemGroup>
