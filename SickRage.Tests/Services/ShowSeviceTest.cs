@@ -7,6 +7,20 @@ namespace SickRage.Tests.Services
     public class ShowSeviceTest : BaseServiceTest
     {
         [TestClass]
+        public class GetShows : ShowSeviceTest
+        {
+            [TestMethod]
+            public void ReturnsMoreThenOneShow()
+            {
+                //Act
+                var shows = Client.ShowService.GetShows();
+
+                //Assert
+                Assert.IsTrue(shows.Count() > 1);
+            }
+        }
+
+        [TestClass]
         public class GetShow : ShowSeviceTest
         {
             [TestMethod]

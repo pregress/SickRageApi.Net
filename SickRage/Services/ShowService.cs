@@ -1,4 +1,5 @@
 ﻿using SickRage.Model;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Net.Http;
 
@@ -11,6 +12,15 @@ namespace SickRage.Services
         public ShowService()
         {
             _client = new HttpClient();
+        }
+
+        public IEnumerable<Show> GetShows()
+        {
+            const string command = "?cmd=shows&sort=name";
+
+            var shows = _client.Get<Dictionary<string, Show>>(command);
+
+            return shows.Values;
         }
 
         public Show GetShow(int showId)

@@ -1,4 +1,6 @@
-﻿namespace SickRage.Model
+﻿using System.Runtime.Serialization;
+
+namespace SickRage.Model
 {
     public enum ShowStatus
     {
@@ -7,5 +9,11 @@
         Continuing,
 
         Ended,
+
+        [EnumMember(Value = "New Series")]
+        NewSeries,
+
+        [EnumMember(Value = "Returning Series")]
+        ReturningSeries,
     }
 }
