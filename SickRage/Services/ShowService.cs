@@ -25,5 +25,12 @@ namespace SickRage.Services
 
             return _client.Get<SeasonList>(command + showId);
         }
+
+        public ShowStats GetStats(int showId)
+        {
+            const string command = "?cmd=show.stats&indexerid=";
+
+            return _client.Get<ShowStats>(command + showId);
+        }
     }
 }

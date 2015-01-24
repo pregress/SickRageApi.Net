@@ -50,6 +50,7 @@
     <Compile Include="Model\SeasonEpisode.cs" />
     <Compile Include="Model\SeasonList.cs" />
     <Compile Include="Model\Show.cs" />
+    <Compile Include="Model\ShowStats.cs" />
     <Compile Include="Model\ShowStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\ApiRequest.cs" />
