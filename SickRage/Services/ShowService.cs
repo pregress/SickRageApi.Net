@@ -34,9 +34,16 @@ namespace SickRage.Services
             return _client.Get<ShowStats>(command + showId);
         }
 
-        public Image GetImage(int showId)
+        public Image GetBanner(int showId)
         {
             const string command = "?cmd=show.getbanner&indexerid=";
+
+            return _client.GetImage(command + showId);
+        }
+
+        public Image GetPoster(int showId)
+        {
+            const string command = "?cmd=show.getposter&indexerid=";
 
             return _client.GetImage(command + showId);
         }

@@ -69,16 +69,35 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class GetImage : ShowSeviceTest
+        public class GetBanner : ShowSeviceTest
         {
             [TestMethod]
-            public void GetImage_DoesNotCrash()
+            public void GetBanner_CreateImageFromUrl()
             {
                 //Arrange
                 const int familyGuyId = 75978;
 
                 //Act
-                var image = Client.ShowService.GetImage(familyGuyId);
+                var image = Client.ShowService.GetBanner(familyGuyId);
+
+                //Assert
+                Assert.IsNotNull(image);
+
+                image.Dispose();
+            }
+        }
+
+        [TestClass]
+        public class GetPoster : ShowSeviceTest
+        {
+            [TestMethod]
+            public void GetPoster_CreateImageFromUrl()
+            {
+                //Arrange
+                const int familyGuyId = 75978;
+
+                //Act
+                var image = Client.ShowService.GetPoster(familyGuyId);
 
                 //Assert
                 Assert.IsNotNull(image);
