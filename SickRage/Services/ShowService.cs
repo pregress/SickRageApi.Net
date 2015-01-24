@@ -1,4 +1,5 @@
 ﻿using SickRage.Model;
+using System.Drawing;
 using System.Net.Http;
 
 namespace SickRage.Services
@@ -31,6 +32,13 @@ namespace SickRage.Services
             const string command = "?cmd=show.stats&indexerid=";
 
             return _client.Get<ShowStats>(command + showId);
+        }
+
+        public Image GetImage(int showId)
+        {
+            const string command = "?cmd=show.getbanner&indexerid=";
+
+            return _client.GetImage(command + showId);
         }
     }
 }

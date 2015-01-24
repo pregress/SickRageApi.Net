@@ -57,7 +57,6 @@ namespace SickRage.Tests.Services
             public void GetStats_ReturnsStatistics()
             {
                 //Arrange
-
                 const int familyGuyId = 75978;
 
                 //Act
@@ -66,6 +65,25 @@ namespace SickRage.Tests.Services
                 //Assert
                 Assert.IsNotNull(statistics);
                 Assert.AreNotEqual(0, statistics.Total);
+            }
+        }
+
+        [TestClass]
+        public class GetImage : ShowSeviceTest
+        {
+            [TestMethod]
+            public void GetImage_DoesNotCrash()
+            {
+                //Arrange
+                const int familyGuyId = 75978;
+
+                //Act
+                var image = Client.ShowService.GetImage(familyGuyId);
+
+                //Assert
+                Assert.IsNotNull(image);
+
+                image.Dispose();
             }
         }
     }

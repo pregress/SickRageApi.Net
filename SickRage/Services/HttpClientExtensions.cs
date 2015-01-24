@@ -1,8 +1,10 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SickRage.Model;
+using System.Drawing;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace SickRage.Services
 {
@@ -47,6 +49,25 @@ namespace SickRage.Services
         public static T Get<T>(this HttpClient client, string command, params object[] parameters)
         {
             var task = client.GetAsync<T>(string.Format(command, parameters));
+            task.Wait();
+
+            return task.Result;
+        }
+
+        public static async Task<Image> GetImageAsync(this HttpClient client, string command)
+        {
+            var response = await client.GetAsync(Settings.Instance.Url + command);
+            byte[] img = await response.Content.ReadAsByteArrayAsync();
+
+            using (var stream = new MemoryStream(img))
+            {
+                return Image.FromStream(stream);
+            }
+        }
+
+        public static Image GetImage(this HttpClient client, string command)
+        {
+            var task = client.GetImageAsync(command);
             task.Wait();
 
             return task.Result;
