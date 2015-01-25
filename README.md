@@ -58,7 +58,17 @@ Console.WriteLine(episode);
    });
 ```
 
-### Display the upcomming epsiodes for today and the near future.
+### Display the upcomming epsiodes for today and the near future
 ```C#
 var comingEpisodes = client.ComingEpisodes.ByDate(FutureType.Today | FutureType.Soon);
+```
+
+### Get the banner for a show
+```C#
+byte[] banner = client.Show.GetBanner(75978);
+```
+
+### Get the poster for a show
+```C#
+byte[] poster = client.Show.GetPoster(75978);
 ```
