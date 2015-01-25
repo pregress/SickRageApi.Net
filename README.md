@@ -27,7 +27,7 @@ var shows = client.Show.GetShows();
 
 foreach (var show in shows)
 {
-Console.WriteLine(show);
+  Console.WriteLine(show);
 }
 
 Console.ReadLine();
