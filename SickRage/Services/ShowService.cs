@@ -1,6 +1,5 @@
 ﻿using SickRage.Model;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Net.Http;
 
 namespace SickRage.Services
@@ -44,14 +43,14 @@ namespace SickRage.Services
             return _client.Get<ShowStats>(command + showId);
         }
 
-        public Image GetBanner(int showId)
+        public byte[] GetBanner(int showId)
         {
             const string command = "?cmd=show.getbanner&indexerid=";
 
             return _client.GetImage(command + showId);
         }
 
-        public Image GetPoster(int showId)
+        public byte[] GetPoster(int showId)
         {
             const string command = "?cmd=show.getposter&indexerid=";
 

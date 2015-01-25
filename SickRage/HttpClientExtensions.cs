@@ -1,12 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SickRage.Model;
-using System.Drawing;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
 
-namespace SickRage.Services
+namespace SickRage
 {
     public static class HttpClientExtensions
     {
@@ -76,18 +74,15 @@ namespace SickRage.Services
             return task.Result;
         }
 
-        public static async Task<Image> GetImageAsync(this HttpClient client, string command)
+        public static async Task<byte[]> GetImageAsync(this HttpClient client, string command)
         {
             var response = await client.GetAsync(Settings.Instance.Url + command);
             byte[] img = await response.Content.ReadAsByteArrayAsync();
 
-            using (var stream = new MemoryStream(img))
-            {
-                return Image.FromStream(stream);
-            }
+            return img;
         }
 
-        public static Image GetImage(this HttpClient client, string command)
+        public static byte[] GetImage(this HttpClient client, string command)
         {
             var task = client.GetImageAsync(command);
             task.Wait();

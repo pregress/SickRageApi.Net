@@ -90,8 +90,7 @@ namespace SickRage.Tests.Services
 
                 //Assert
                 Assert.IsNotNull(image);
-
-                image.Dispose();
+                Assert.IsTrue(image.Length > 0);
             }
         }
 
@@ -109,8 +108,7 @@ namespace SickRage.Tests.Services
 
                 //Assert
                 Assert.IsNotNull(image);
-
-                image.Dispose();
+                Assert.IsTrue(image.Length > 0);
             }
         }
 

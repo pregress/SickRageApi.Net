@@ -64,13 +64,13 @@
     <Compile Include="Services\HistoryServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SickRage\SickRage.csproj">
-      <Project>{1a6d05c2-893b-464d-ad07-25afb02bce94}</Project>
-      <Name>SickRage</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\SickRage\SickRage.csproj">
+      <Project>{e634a45e-b570-40aa-93fd-b0926c7e6005}</Project>
+      <Name>SickRage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

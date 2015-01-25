@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SickRage", "SickRage\SickRage.csproj", "{1A6D05C2-893B-464D-AD07-25AFB02BCE94}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SickRage.Tests", "SickRage.Tests\SickRage.Tests.csproj", "{6FA247B8-4D5A-4101-8E7C-173CB8E47903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SickRage", "SickRage\SickRage.csproj", "{E634A45E-B570-40AA-93FD-B0926C7E6005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1A6D05C2-893B-464D-AD07-25AFB02BCE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A6D05C2-893B-464D-AD07-25AFB02BCE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A6D05C2-893B-464D-AD07-25AFB02BCE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A6D05C2-893B-464D-AD07-25AFB02BCE94}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6FA247B8-4D5A-4101-8E7C-173CB8E47903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6FA247B8-4D5A-4101-8E7C-173CB8E47903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FA247B8-4D5A-4101-8E7C-173CB8E47903}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FA247B8-4D5A-4101-8E7C-173CB8E47903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E634A45E-B570-40AA-93FD-B0926C7E6005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E634A45E-B570-40AA-93FD-B0926C7E6005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E634A45E-B570-40AA-93FD-B0926C7E6005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E634A45E-B570-40AA-93FD-B0926C7E6005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
