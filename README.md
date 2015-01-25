@@ -66,9 +66,14 @@ var comingEpisodes = client.ComingEpisodes.ByDate(FutureType.Today | FutureType.
 ### Get the banner for a show
 ```C#
 byte[] banner = client.Show.GetBanner(75978);
+using (var stream = new MemoryStream(banner))
+{
+    System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
+}
 ```
 
 ### Get the poster for a show
 ```C#
 byte[] poster = client.Show.GetPoster(75978);
+///...
 ```
