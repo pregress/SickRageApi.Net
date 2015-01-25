@@ -2,6 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>SickRageApi.Net</id>
+    <version>0.0.14</version>
     <authors>Preben Huybrechts</authors>
     <description>A library to consume the sickrage api from within a .net application.</description>
     <language>en-US</language>
