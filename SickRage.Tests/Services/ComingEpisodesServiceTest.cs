@@ -44,6 +44,26 @@ namespace SickRage.Tests.Services
                 Assert.IsFalse(comingEpisodes.ContainsKey(FutureType.Later));
                 Assert.IsFalse(comingEpisodes.ContainsKey(FutureType.Today));
             }
+
+            [TestMethod]
+            public void WithMissedAndToday_ReturnsTwo()
+            {
+                //Act
+                var comingEpisodes = Client.ComingEpisodes.ByDate(FutureType.Missed | FutureType.Today);
+
+                //Assert
+                Assert.AreEqual(2, comingEpisodes.Count);
+            }
+
+            [TestMethod]
+            public void WithMissedTodayAndSoon_ReturnsThree()
+            {
+                //Act
+                var comingEpisodes = Client.ComingEpisodes.ByDate(FutureType.Missed | FutureType.Today | FutureType.Soon);
+
+                //Assert
+                Assert.AreEqual(3, comingEpisodes.Count);
+            }
         }
 
         [TestClass]

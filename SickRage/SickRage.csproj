@@ -46,11 +46,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Model\DataResponse.cs" />
     <Compile Include="Model\Episode.cs" />
     <Compile Include="Model\EpisodeParam.cs" />
+    <Compile Include="Model\EpisodeStatus.cs" />
     <Compile Include="Model\FutureEpisode.cs" />
     <Compile Include="Model\FutureType.cs" />
+    <Compile Include="Model\History.cs" />
+    <Compile Include="Model\HistoryType.cs" />
+    <Compile Include="Model\NewShow.cs" />
     <Compile Include="Model\Response.cs" />
+    <Compile Include="Model\ResponseResult.cs" />
+    <Compile Include="Model\SchedulerResult.cs" />
     <Compile Include="Model\SearchResult.cs" />
     <Compile Include="Model\SeasonEpisode.cs" />
     <Compile Include="Model\SeasonList.cs" />
@@ -63,7 +70,10 @@
     <Compile Include="Services\ComingEpisodesService.cs" />
     <Compile Include="Services\EpisodeService.cs" />
     <Compile Include="HttpClientExtensions.cs" />
+    <Compile Include="Services\HistoryService.cs" />
     <Compile Include="Services\ShowService.cs" />
+    <Compile Include="Services\SickRageService.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

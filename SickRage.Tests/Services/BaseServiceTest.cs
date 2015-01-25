@@ -12,10 +12,10 @@ namespace SickRage.Tests.Services
             Client = new Client(AppSettings.Url, AppSettings.ApiKey);
         }
 
-        protected void AssertSuccess<T>(Response<T> response)
+        protected void AssertSuccess(Response response)
         {
             Assert.IsNotNull(response);
-            Assert.AreEqual("success", response.Result);
+            Assert.AreEqual(ResponseResult.Success, response.Result);
         }
     }
 }

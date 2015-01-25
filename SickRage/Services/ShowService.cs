@@ -58,18 +58,32 @@ namespace SickRage.Services
             return _client.GetImage(command + showId);
         }
 
-        public Response<object> Refresh(int showId)
+        public Response Refresh(int showId)
         {
             const string command = "?cmd=show.refresh&indexerid=";
 
             return _client.GetResponse<object>(command + showId);
         }
 
-        public Response<object> Update(int showId)
+        public Response Update(int showId)
         {
             const string command = "?cmd=show.update&indexerid=";
 
             return _client.GetResponse<object>(command + showId);
+        }
+
+        public DataResponse<NewShow> AddNewShow(int showId)
+        {
+            const string command = "?cmd=show.addnew&indexerid=";
+
+            return _client.GetResponse<NewShow>(command + showId);
+        }
+
+        public Response DeleteShow(int showId, bool removeFiles)
+        {
+            const string command = "?cmd=show.delete&indexerid={0}&removefiles={1}";
+
+            return _client.GetResponse<object>(command, showId, removeFiles ? 1 : 0);
         }
     }
 }

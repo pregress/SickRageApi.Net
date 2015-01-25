@@ -1,13 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SickRage.Model;
 using System.Linq;
 
 namespace SickRage.Tests.Services
 {
     [TestClass]
-    public class ShowSeviceTest : BaseServiceTest
+    public class ShowServiceTest : BaseServiceTest
     {
         [TestClass]
-        public class GetShows : ShowSeviceTest
+        public class GetShows : ShowServiceTest
         {
             [TestMethod]
             public void ReturnsMoreThenOneShow()
@@ -21,7 +22,7 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class GetShow : ShowSeviceTest
+        public class GetShow : ShowServiceTest
         {
             [TestMethod]
             public void GetGameOfThrones_ReturnsShow()
@@ -39,7 +40,7 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class GetSeasons : ShowSeviceTest
+        public class GetSeasons : ShowServiceTest
         {
             [TestMethod]
             public void GetSeasons_ReturnsListOfSeasonsAndEpisodes()
@@ -58,7 +59,7 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class GetStats : ShowSeviceTest
+        public class GetStats : ShowServiceTest
         {
             [TestMethod]
             public void GetStats_ReturnsStatistics()
@@ -76,7 +77,7 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class GetBanner : ShowSeviceTest
+        public class GetBanner : ShowServiceTest
         {
             [TestMethod]
             public void GetBanner_CreateImageFromUrl()
@@ -95,7 +96,7 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class GetPoster : ShowSeviceTest
+        public class GetPoster : ShowServiceTest
         {
             [TestMethod]
             public void GetPoster_CreateImageFromUrl()
@@ -114,7 +115,7 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class Refresh : ShowSeviceTest
+        public class Refresh : ShowServiceTest
         {
             [TestMethod]
             public void Returns_Success()
@@ -131,19 +132,55 @@ namespace SickRage.Tests.Services
         }
 
         [TestClass]
-        public class Update : ShowSeviceTest
+        public class Update : ShowServiceTest
         {
             [TestMethod]
             public void Returns_Success()
             {
                 //Arrange
-                const int familyGuyId = 75978;
+                const int topGearId = 74608;
 
                 //Act
-                var response = Client.Show.Update(familyGuyId);
+                var response = Client.Show.Update(topGearId);
 
                 //Assert
                 AssertSuccess(response);
+            }
+        }
+
+        [TestClass]
+        public class AddNewShow : ShowServiceTest
+        {
+            [TestMethod]
+            public void AddBanshee_ReturnsSuccess()
+            {
+                //Arrange
+                //http://thetvdb.com/?id=259765&tab=series
+                const int bansheeId = 259765;
+
+                //Act
+                var response = Client.Show.AddNewShow(bansheeId);
+
+                //Assert
+                Assert.AreEqual(ResponseResult.Success, response.Result);
+                Assert.IsNotNull(response.Data.Name);
+            }
+        }
+
+        [TestClass]
+        public class DeleteShow : ShowServiceTest
+        {
+            [TestMethod]
+            public void DeleteBanshee_ReturnsSuccess()
+            {
+                //Arrange
+                const int bansheeId = 259765;
+
+                //Act
+                var response = Client.Show.DeleteShow(bansheeId, false);
+
+                //Assert
+                Assert.AreEqual(ResponseResult.Success, response.Result);
             }
         }
     }

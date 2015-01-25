@@ -38,7 +38,7 @@ namespace SickRage.Tests.Services
 
                 //Assert
                 Assert.IsNotNull(response);
-                Assert.AreEqual("failure", response.Result);
+                Assert.AreEqual(ResponseResult.Failure, response.Result);
             }
 
             [TestMethod, Ignore] //Ignored triggers a new download
@@ -49,6 +49,49 @@ namespace SickRage.Tests.Services
 
                 //Act
                 var response = Client.Episodes.Search(episodeParameter);
+
+                //Assert
+                AssertSuccess(response);
+            }
+        }
+
+        [TestClass]
+        public class SetStatus : EpisodeServiceTest
+        {
+            [TestMethod]
+            public void ForSeasonSetSkipped_ReturnsSuccess()
+            {
+                //Arrange
+                var episodeParameter = new EpisodeParam { ShowId = 75978, Season = 1 };
+
+                //Act
+                var response = Client.Episodes.SetStatus(episodeParameter, EpisodeStatus.Skipped);
+
+                //Assert
+                AssertSuccess(response);
+            }
+
+            [TestMethod]
+            public void ForSeasonSetWanted_ReturnsSuccess()
+            {
+                //Arrange
+                var episodeParameter = new EpisodeParam { ShowId = 75978, Season = 1 };
+
+                //Act
+                var response = Client.Episodes.SetStatus(episodeParameter, EpisodeStatus.Wanted);
+
+                //Assert
+                AssertSuccess(response);
+            }
+
+            [TestMethod]
+            public void ForEpisodeSetSkipped_ReturnsSuccess()
+            {
+                //Arrange
+                var episodeParameter = new EpisodeParam { ShowId = 75978, Season = 1, Episode = 1 };
+
+                //Act
+                var response = Client.Episodes.SetStatus(episodeParameter, EpisodeStatus.Skipped);
 
                 //Assert
                 AssertSuccess(response);

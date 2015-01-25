@@ -58,8 +58,10 @@
     <Compile Include="Services\BaseServiceTest.cs" />
     <Compile Include="Services\ComingEpisodesServiceTest.cs" />
     <Compile Include="Services\EpisodeServiceTest.cs" />
-    <Compile Include="Services\ShowSeviceTest.cs" />
+    <Compile Include="Services\ShowServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SickRageServiceTest.cs" />
+    <Compile Include="Services\HistoryServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SickRage\SickRage.csproj">

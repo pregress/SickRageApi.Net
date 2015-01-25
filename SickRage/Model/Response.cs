@@ -1,11 +1,13 @@
-﻿namespace SickRage.Model
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace SickRage.Model
 {
-    public class Response<T>
+    public class Response
     {
         public string Message { get; set; }
 
-        public string Result { get; set; }
-
-        public T Data { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ResponseResult Result { get; set; }
     }
 }

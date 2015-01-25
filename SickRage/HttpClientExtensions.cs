@@ -50,17 +50,17 @@ namespace SickRage.Services
             return task.Result;
         }
 
-        public static async Task<Response<T>> GetResponseAsync<T>(this HttpClient client, string command)
+        public static async Task<DataResponse<T>> GetResponseAsync<T>(this HttpClient client, string command)
         {
             var response = await client.GetAsync(Settings.Instance.Url + command);
             AdjustContentType(response);
 
             var jsonString = await response.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<Response<T>>(jsonString);
+            return JsonConvert.DeserializeObject<DataResponse<T>>(jsonString);
         }
 
-        public static Response<T> GetResponse<T>(this HttpClient client, string command)
+        public static DataResponse<T> GetResponse<T>(this HttpClient client, string command)
         {
             var task = client.GetResponseAsync<T>(command);
             task.Wait();
@@ -68,7 +68,7 @@ namespace SickRage.Services
             return task.Result;
         }
 
-        public static Response<T> GetResponse<T>(this HttpClient client, string command, params object[] parameters)
+        public static DataResponse<T> GetResponse<T>(this HttpClient client, string command, params object[] parameters)
         {
             var task = client.GetResponseAsync<T>(string.Format(command, parameters));
             task.Wait();
