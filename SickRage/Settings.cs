@@ -37,7 +37,8 @@ namespace SickRage
         {
             get
             {
-                return BaseUrl + Api + ApiKey + "/";
+                var baseUrl = new Uri(new Uri(BaseUrl), Api);
+                return new Uri(baseUrl, ApiKey).ToString();
             }
         }
     }
